@@ -10,6 +10,22 @@ const App = () => {
       <h2>
         Don't forget to do your diary commits on Github Desktop!
       </h2>
+
+      <h3>
+
+      </h3>
+
+      <h3>
+
+      </h3>
+
+      <h3>
+
+      </h3>
+
+      <h3>
+        
+      </h3>
     </>
   );
 }
