@@ -12,19 +12,19 @@ const App = () => {
       </h2>
 
       <h3>
-
+        Hello Mika!
       </h3>
 
       <h3>
-
+        Hello Baxter!
       </h3>
 
       <h3>
-
+        Hello Sophie!
       </h3>
 
       <h3>
-        
+        Hello Bear!
       </h3>
     </>
   );
