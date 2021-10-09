@@ -13,6 +13,24 @@
   }
 }
 
+div.card {
+  text-align: center;
+  min-width: fit-content;
+}
+
+div.card-body {
+  align-content: center;
+}
+
+h2 {
+  min-width: fit-content;
+  margin: 0;
+}
+
+div#root {
+  text-align: center;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
