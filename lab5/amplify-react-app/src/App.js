@@ -6,12 +6,22 @@ import './App.css';
 
 function App() {
 
+  // Create additional state to hold user input for the limit and start properties
+  const [input, updateInput] = useState({ limit: 5, start: 0 })
+
+  // Create a new function to allow users to update the input values
+function updateInputValues(type, value) {
+  updateInput({ ...input, [type]: value })
+}
+
+
   // Create coins variable ans set to empty array
   const [coins, updateCoins] = useState([])
 
   // Define function to all API
   async function fetchCoins() {
-    const data = await API.get('cryptoapi', '/coins')
+    const { limit, start } = input
+    const data = await API.get('cryptoapi', `/coins?limit=${limit}&start=${start}`)
     updateCoins(data.coins)
   }
 
@@ -31,6 +41,20 @@ function App() {
           </div>
         ))
       }
+
+      // Add input fields to the UI for user input
+      <input
+        onChange={e => updateInputValues('limit', e.target.value)}
+        placeholder="limit"
+      />
+      <input
+        placeholder="start"
+        onChange={e => updateInputValues('start', e.target.value)}
+      />
+
+      // Add button to the UI to give user the option to call the API
+      <button onClick={fetchCoins}>Fetch Coins</button>
+
 
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

@@ -29,6 +29,7 @@ app.use(function(req, res, next) {
 /**********************
  * Example get method *
  **********************/
+const axios = require('axios')
 app.get('/coins', function(req, res) {
 
   // Define base url
@@ -58,7 +59,7 @@ app.get('/coins', function(req, res) {
   res.json({
     coins 
   });
-});
+
 
 app.get('/item', function(req, res) {
   // Add your code here
