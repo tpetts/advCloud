@@ -42,7 +42,7 @@ function updateInputValues(type, value) {
         ))
       }
 
-      // Add input fields to the UI for user input
+      {/* Add input fields to the UI for user input */}
       <input
         onChange={e => updateInputValues('limit', e.target.value)}
         placeholder="limit"
@@ -52,7 +52,7 @@ function updateInputValues(type, value) {
         onChange={e => updateInputValues('start', e.target.value)}
       />
 
-      // Add button to the UI to give user the option to call the API
+      {/* Add button to the UI to give user the option to call the API */}
       <button onClick={fetchCoins}>Fetch Coins</button>
 
 
