@@ -19,11 +19,18 @@ function updateInputValues(type, value) {
   const [coins, updateCoins] = useState([])
 
   // Define function to all API
-  async function fetchCoins() {
-    const { limit, start } = input
-    const data = await API.get('cryptoapi', `/coins?limit=${limit}&start=${start}`)
-    updateCoins(data.coins)
+  const fetchCoins = async() => {
+    const { limit, start } = input;
+    const data = await API.get('cryptoapi', `/coins?limit=${limit}&start=${start}`);
+    updateCoins(data.coins);
   }
+
+  // Define function to all API
+  // async function fetchCoins() {
+  //   const { limit, start } = input
+  //   const data = await API.get('cryptoapi', `/coins?limit=${limit}&start=${start}`)
+  //   updateCoins(data.coins)
+  // }
 
   // Call fetchCoins function when the component loads
   useEffect(() => {
