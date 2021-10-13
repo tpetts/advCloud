@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { API } from 'aws-amplify';
 import './App.css';
 
-function App() {
+const App = () => {
 
   // Create additional state to hold user input for the limit and start properties
   const [input, updateInput] = useState({ limit: 5, start: 0 })
@@ -50,13 +50,15 @@ function updateInputValues(type, value) {
       }
 
       {/* Add input fields to the UI for user input */}
-      <input
-        onChange={e => updateInputValues('limit', e.target.value)}
-        placeholder="limit"
-      />
+      
       <input
         placeholder="start"
         onChange={e => updateInputValues('start', e.target.value)}
+      />
+
+      <input
+        onChange={e => updateInputValues('limit', e.target.value)}
+        placeholder="limit"
       />
 
       {/* Add button to the UI to give user the option to call the API */}
