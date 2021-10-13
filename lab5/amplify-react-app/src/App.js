@@ -6,23 +6,27 @@ import './App.css';
 
 const App = () => {
 
+   // Create coins variable ans set to empty array
+   const [coins, updateCoins] = useState([])
+
   // Create additional state to hold user input for the limit and start properties
   const [input, updateInput] = useState({ limit: 5, start: 0 })
+
+   // Create a variable for loading
+   const [loading, updateLoading] = useState(true);
 
   // Create a new function to allow users to update the input values
 function updateInputValues(type, value) {
   updateInput({ ...input, [type]: value })
 }
 
-
-  // Create coins variable ans set to empty array
-  const [coins, updateCoins] = useState([])
-
   // Define function to all API
   const fetchCoins = async() => {
+    updateLoading(true);
     const { limit, start } = input;
     const data = await API.get('cryptoapi', `/coins?limit=${limit}&start=${start}`);
     updateCoins(data.coins);
+    updateLoading(false);
   }
 
   // Define function to all API
