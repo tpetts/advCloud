@@ -44,15 +44,6 @@ function updateInputValues(type, value) {
   return (
     <div className="App">
 
-      {
-        coins.map((coin, index) => (
-          <div key={index}>
-          <h2>{coin.name} - {coin.symbol}</h2>
-          <h5>${coin.price_usd}</h5>
-          </div>
-        ))
-      }
-
       {/* Add input fields to the UI for user input */}
       
       <input
@@ -67,6 +58,15 @@ function updateInputValues(type, value) {
 
       {/* Add button to the UI to give user the option to call the API */}
       <button onClick={fetchCoins}>Fetch Coins</button>
+
+      {
+        coins.map((coin, index) => (
+          <div key={index}>
+          <h2>{coin.name} - {coin.symbol}</h2>
+          <h5>${coin.price_usd}</h5>
+          </div>
+        ))
+      }
 
 
       {/* <header className="App-header">
